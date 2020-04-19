@@ -1,36 +1,40 @@
-function checkedNum (data) {
-    
-    let eachData;
-    let allData = [];
+function checkedData(data) {
+    let dataArray=[];
 
     for(i = 1; i <= data; i++) {
-         
-    if(i%2 === 0 || i%3 === 0 || i%5 === 0) {
-        if(i % 2 == 0) {
-            
-            eachData += eachData ? '-yu' : 'yu';            
-        
-        } else if (i % 3 === 0) {
-            
-            eachData += eachData ? '-gi' : 'gi';
-        
-        } else if (i % 5 === 0) {
-           
-            eachData += eachData ? '-oh' : 'oh';
 
+    let eachData = '';
+
+ if(i % 5 === 0 ||i % 3 === 0 || i % 2 === 0){
+    if(i %2 === 0){
+        if(eachData != '')
+        eachData+='-yu' 
+        else{
+            eachData ='yu' 
         }
-        
     }
+     if(i % 3 === 0){
+            if(eachData !='')
+            eachData += '-gi' 
 
-    else {
-       eachData = i;
+            else{
+                eachData = 'gi' 
+            }
+        }
+        if(i % 5 === 0){
+            if(eachData != '')
+            eachData += '-oh' 
+
+            else{
+                eachData = 'oh' 
+            }
+        }
+}
+        else{
+            eachData = i;
+        }
+        dataArray.push(eachData);
     }
-
-      allData.push(eachData)
-       
-     }
-  
-     return allData
- }
-
- console.log(checkedNum());
+    return dataArray;
+}
+console.log(checkedData());
