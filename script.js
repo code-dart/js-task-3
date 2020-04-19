@@ -33,4 +33,4 @@ function checkedNum (data) {
      return allData
  }
 
- console.log(checkedNum(100));
+ console.log(checkedNum());
